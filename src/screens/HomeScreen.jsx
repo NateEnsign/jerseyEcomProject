@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import JerseyCard from '../components/JerseyCard'
+import styles from "./HomeScreen.module.css";
 
  const HomeScreen = () => {
     const [jerseys, setJerseys] = useState([])
@@ -26,9 +27,12 @@ import JerseyCard from '../components/JerseyCard'
     })
 
   return (
-    <div>
-        <h1>Home</h1>
-        <div className='jersey-container'>
+    <div className={styles.mainPage}>
+        <div className='banner'>
+            <h1>Banner</h1>
+        </div>
+        
+        <div className={styles.jerseyContainer}>
             {jerseyDisplay}
         </div>
     </div>

@@ -1,0 +1,13 @@
+.jerseyCard {
+    width: 200px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.jerseyPhoto {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
