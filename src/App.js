@@ -4,6 +4,7 @@ import Header from './components/Header';
 import { Routes, Route } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import AuthScreen from './screens/AuthScreen';
+import DetailsScreen from './screens/DetailsScreen';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/auth" element={<AuthScreen />} />
+        <Route path="/details/:id" element={<DetailsScreen />} />
       </Routes>
     </div>
   );

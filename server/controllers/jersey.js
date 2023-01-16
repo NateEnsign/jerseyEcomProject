@@ -9,4 +9,16 @@ module.exports = {
       res.status(400).send(err);
     }
   },
+  getJersey: async (req, res) => {
+    try {
+      let jersey = await Jersey.findOne({
+        where: {id: req.params.id},
+        
+      })
+      res.status(200).send(jersey)
+    }
+    catch (err) {
+      res.status(400).send(err)
+    }
+  }
 };

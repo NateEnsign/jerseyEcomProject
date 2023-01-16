@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
+import logo from '../assets/logo.png';
 
 const Header = () => {
   return (
     <div>
       <header className={styles.header}>
-        <h1>Jersey Town</h1>
+        <div>src={logo}</div>
         <ul>
           <Link to="/">
             <button>Home</button>
