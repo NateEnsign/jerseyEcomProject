@@ -8,7 +8,7 @@ const createToken = (email, id) => {
   return jwt.sign(
     {
       email,
-      id,
+      id
     },
     SECRET,
     {

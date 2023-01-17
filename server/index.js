@@ -23,8 +23,8 @@ CartItem.belongsTo(Jersey);
 server.get('/api/allJerseys', getAllJerseys)
 server.get('/api/jersey/:id', getJersey)
 
-server.post('/api/register', register)
-server.post('/api/login', login)
+server.post('/register', register)
+server.post('/login', login)
 
 
 

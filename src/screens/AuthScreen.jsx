@@ -41,87 +41,54 @@ const AuthScreen = () => {
   };
 
   return (
-    // <main>
-    //   <div className={styles.authHeader}>
-    //     {!register ? <h2>Sign Up</h2> : <h2>Login</h2>}
-    //   </div>
-    //   <form className={styles.form} onSubmit={submitHandler}>
-    //     <input
-    //       type="text"
-    //       placeholder="first name"
-    //       value={firstName}
-    //       onChange={(e) => setFirstName(e.target.value)}
-    //       className={styles.formInput}
-    //     />
-    //     <input
-    //       type="text"
-    //       placeholder="last name"
-    //       value={lastName}
-    //       onChange={(e) => setLastName(e.target.value)}
-    //       className={styles.formInput}
-    //     />
-    //     <input
-    //       type="text"
-    //       placeholder="email"
-    //       value={email}
-    //       onChange={(e) => setEmail(e.target.value)}
-    //       className={styles.formInput}
-    //     />
-    //     <input
-    //       type="password"
-    //       placeholder="password"
-    //       value={password}
-    //       onChange={(e) => setPassword(e.target.value)}
-    //       className="form-input"
-    //     />
-    //     <button className={styles.formBtn}>
-    //       {register ? "Sign Up" : "Login"}
-    //     </button>
-    //   </form>
-    // </main>
-
     <div>
-    <div className={styles.authHeader}>
+      <div className={styles.authHeader}>
         {!register ? <h2>Register</h2> : <h2>Login</h2>}
-    </div>
-    <form className={styles.auth} onSubmit={submitHandler}>
-        {!register && <input
+      </div>
+      <form className={styles.auth} onSubmit={submitHandler}>
+        {!register && (
+          <input
             className={styles.input}
-            type='text'
-            placeholder='first name'
-            onChange={e => setFirstName(e.target.value)}
+            type="text"
+            placeholder="first name"
+            onChange={(e) => setFirstName(e.target.value)}
             value={firstName}
-        />}
-        {!register && <input
+          />
+        )}
+        {!register && (
+          <input
             className={styles.input}
-            type='text'
-            placeholder='last name'
-            onChange={e => setLastName(e.target.value)}
+            type="text"
+            placeholder="last name"
+            onChange={(e) => setLastName(e.target.value)}
             value={lastName}
-        />}
+          />
+        )}
         <input
-            className={styles.input}
-            type='text'
-            placeholder='email'
-            onChange={e => setEmail(e.target.value)}
-            value={email}
+          className={styles.input}
+          type="text"
+          placeholder="email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
         />
         <input
-            className={styles.input}
-            type='password'
-            placeholder='password'
-            onChange={e => setPassword(e.target.value)}
-            value={password}
+          className={styles.input}
+          type="password"
+          placeholder="password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
         />
         <button className={styles.authBtn}>
-            {!register ? 'Register' : 'Login'}
+          {!register ? "Register" : "Login"}
         </button>
-<p style={{ display: display }} className={styles.msg}>{message}</p>
-    </form>
-    <button className='form-btn' onClick={() => setRegister(!register)}>
-                Need to {register ? 'Register' : 'Login'}?
-            </button>
-</div>
+        <p style={{ display: display }} className={styles.msg}>
+          {message}
+        </p>
+      </form>
+      <button className="form-btn" onClick={() => setRegister(!register)}>
+        Need to {register ? "Register" : "Login"}?
+      </button>
+    </div>
   );
 };
 
