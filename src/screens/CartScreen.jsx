@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from './CartScreen.module.css'
 
 const CartScreen = () => {
   return (
-    <div>CartScreen</div>
+    <div className={styles.main}>CartScreen</div>
   )
 }
 

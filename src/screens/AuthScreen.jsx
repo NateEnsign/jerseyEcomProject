@@ -41,7 +41,7 @@ const AuthScreen = () => {
   };
 
   return (
-    <div>
+    <div className={styles.page}>
       <div className={styles.authHeader}>
         {!register ? <h2>Register</h2> : <h2>Login</h2>}
       </div>

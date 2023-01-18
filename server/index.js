@@ -7,6 +7,7 @@ const {getAllJerseys, getJersey} = require('./controllers/jersey')
 const {login, register} = require('./controllers/auth')
 require('dotenv').config()
 const {isAuthenticated} = require('./middleware/isAuthenticated')
+const {addToCart} = require('./controllers/cart')
 
 const server = express()
 server.use(express.json())
@@ -25,6 +26,8 @@ server.get('/api/jersey/:id', getJersey)
 
 server.post('/register', register)
 server.post('/login', login)
+
+server.post("/cartItem/:id", addToCart);
 
 
 

@@ -1,9 +1,19 @@
 .header {
-    height: 130px;
+    height: 120px;
     width: 100vw;
-    background-color: blue;
+    position: fixed;
+    background-color: grey;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding-right: 50px;
+    padding-left: 50px;
 }
+
+
+.logo {
+    font-size: 70px;
+    font-weight: 3000;
+}
+

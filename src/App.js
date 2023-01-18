@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import AuthScreen from './screens/AuthScreen';
 import DetailsScreen from './screens/DetailsScreen';
+import CartScreen from './screens/CartScreen'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<HomeScreen />} />
         <Route path="/auth" element={<AuthScreen />} />
         <Route path="/details/:id" element={<DetailsScreen />} />
+        <Route path="/cart" element={<CartScreen />} />
       </Routes>
     </div>
   );
