@@ -1,26 +1,3 @@
-// import React from 'react'
-// import styles from "./JerseyCard.module.css";
-// import { Link } from 'react-router-dom'
-
-// const JerseyCard = ({jersey}) => {
-//   return (
-//     <div className={styles.jerseyCard}>
-//         <Link to={`/details/${jersey.id}`}>
-//         <img className={styles.jerseyPhoto} src={jersey.photo} alt='' />
-//         </Link>
-//         <Link to={`/details/${jersey.id}`}>
-//         <h3 className={styles.jerseyName}>{jersey.name}</h3>
-//         <h4 className= {styles.jerseyPrice}>${jersey.price}</h4>
-//         </Link>
-//         <Link to={`/details/${jersey.id}`}>
-//         <button className={styles.cardBtn}>Add to Cart</button>
-//         </Link>
-//     </div>
-//   )
-// }
-
-// export default JerseyCard
-
 import React, {useContext} from "react";
 import styles from "./JerseyCard.module.css";
 import { Link } from "react-router-dom";
