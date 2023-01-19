@@ -1,4 +1,26 @@
 .page {
-    padding-top: 140px;
-    
+    padding-top: 120px;
 }
+
+.authHeader {
+    color: white;
+    padding-top: 50px;
+}
+
+.auth {
+    padding-top: 15px;
+}
+
+.input {
+    margin: 10px;
+    height: 25px;
+    width: 200px;
+}
+
+.authBtn {
+    height: 25px;
+    width: 70px;
+    margin: 10px;
+}
+
+

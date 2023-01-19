@@ -42,52 +42,66 @@ const AuthScreen = () => {
 
   return (
     <div className={styles.page}>
-      <div className={styles.authHeader}>
-        {!register ? <h2>Register</h2> : <h2>Login</h2>}
-      </div>
-      <form className={styles.auth} onSubmit={submitHandler}>
-        {!register && (
+      <div className={styles.base} style={{
+        width: '100vw',
+        height: '47vw',
+        background: `linear-gradient(
+          190deg,
+          rgba(0,0,0,0.6),
+          rgba(0,0,0,0.6)),          
+          url("https://wallpaperaccess.com/full/6578522.jpg") no-repeat top/cover`,
+        // backgroundSize: 'cover',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
+      }}>
+        <div className={styles.authHeader}>
+          {!register ? <h2>Register</h2> : <h2>Login</h2>}
+        </div>
+        <form className={styles.auth} onSubmit={submitHandler}>
+          {!register && (
+            <input
+              className={styles.input}
+              type="text"
+              placeholder="first name"
+              onChange={(e) => setFirstName(e.target.value)}
+              value={firstName}
+            />
+          )}
+          {!register && (
+            <input
+              className={styles.input}
+              type="text"
+              placeholder="last name"
+              onChange={(e) => setLastName(e.target.value)}
+              value={lastName}
+            />
+          )}
           <input
             className={styles.input}
             type="text"
-            placeholder="first name"
-            onChange={(e) => setFirstName(e.target.value)}
-            value={firstName}
+            placeholder="email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
-        )}
-        {!register && (
           <input
             className={styles.input}
-            type="text"
-            placeholder="last name"
-            onChange={(e) => setLastName(e.target.value)}
-            value={lastName}
+            type="password"
+            placeholder="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
           />
-        )}
-        <input
-          className={styles.input}
-          type="text"
-          placeholder="email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-        <input
-          className={styles.input}
-          type="password"
-          placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
-        <button className={styles.authBtn}>
-          {!register ? "Register" : "Login"}
+          <button className={styles.authBtn}>
+            {!register ? "Register" : "Login"}
+          </button>
+          <p style={{ display: display }} className={styles.msg}>
+            {message}
+          </p>
+        </form>
+        <button className={styles.swtichBtn} onClick={() => setRegister(!register)}>
+          Need to {register ? "Register" : "Login"}?
         </button>
-        <p style={{ display: display }} className={styles.msg}>
-          {message}
-        </p>
-      </form>
-      <button className="form-btn" onClick={() => setRegister(!register)}>
-        Need to {register ? "Register" : "Login"}?
-      </button>
+      </div>
     </div>
   );
 };

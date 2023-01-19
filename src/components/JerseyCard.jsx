@@ -3,14 +3,16 @@ import styles from "./JerseyCard.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import AuthContext from "../store/authContext";
+import Swal from "sweetalert2";
 
 
 
 const JerseyCard = ({ jersey }) => {
-
   const authCtx = useContext(AuthContext);
+  const Swal = require('sweetalert2')
 
   const addToCartHandler = () => {
+    Swal.fire('Item added to cart!')
     const body = {
       jerseyId: jersey.id,
       userId: authCtx.userId
