@@ -11,3 +11,19 @@
     object-fit: cover;
 }
 
+.jerseyName {
+    color: black;
+}
+
+.jerseyPrice {
+    color: black;
+}
+
+.cardBtn {
+    font-weight: 800;
+}
+
+.cardBtn:hover {
+    background-color: grey;
+}
+

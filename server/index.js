@@ -7,7 +7,7 @@ const { getAllJerseys, getJersey } = require("./controllers/jersey");
 const { login, register } = require("./controllers/auth");
 require("dotenv").config();
 const { isAuthenticated } = require("./middleware/isAuthenticated");
-const { addToCart, getCart } = require("./controllers/cart");
+const { addToCart, getCart, removeFromCart } = require("./controllers/cart");
 
 const server = express();
 server.use(express.json());
@@ -29,6 +29,7 @@ server.post("/login", login);
 
 server.post("/cartItem/:id", addToCart);
 server.get("/cart/:userId", getCart);
+server.delete("/cartItem/:cartItemId", removeFromCart);
 
 db.sync();
 // .sync({force: true})

@@ -22,22 +22,21 @@ const CartScreen = () => {
   };
 
   useEffect(() => {
-    getCart()
-  },[])
+    getCart();
+  }, []);
 
   const cartItemDisplay = items.map((cartItem, index) => {
     return <CartItem jersey={cartItem} />;
   });
 
   return (
-    <div>
-      <div className={styles.main}>CartScreen</div>
-      <div>{cartItemDisplay}</div>
+    <div className={styles.main}>
+      <div className={styles.itemContainer}>
+        <div>Cart</div>
+        <div>{cartItemDisplay}</div>
+      </div>
     </div>
   );
 };
 
 export default CartScreen;
-
-
-

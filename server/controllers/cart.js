@@ -11,6 +11,17 @@ module.exports = {
       console.error(err);
     }
   },
+  removeFromCart: async (req, res) => {
+    try {
+      const { cartItemId } = req.params;
+      await CartItem.destroy({ where: { id: cartItemId } });
+      return res.sendStatus(200);
+    } catch {
+      console.log(err);
+      return res.sendStatus(400);
+    }
+  },
+
   getCart: async (req, res) => {
     try {
       const { userId } = req.params;
@@ -19,22 +30,22 @@ module.exports = {
         include: [
           {
             model: User,
-            attributes: ["email"], 
+            attributes: ["email"],
             required: true,
           },
           {
-            model: Jersey, 
+            model: Jersey,
             required: true,
             attributes: ["photo", "name", "price"],
           },
         ],
       });
-      
+
       return res.status(200).send(cart);
     } catch (err) {
       console.error(err);
       console.log("Could not retrieve cart");
-      return res.sendStatus(400)
+      return res.sendStatus(400);
     }
-  }
+  },
 };

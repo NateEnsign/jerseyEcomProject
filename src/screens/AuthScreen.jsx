@@ -98,7 +98,7 @@ const AuthScreen = () => {
             {message}
           </p>
         </form>
-        <button className={styles.swtichBtn} onClick={() => setRegister(!register)}>
+        <button onClick={() => setRegister(!register)} className={styles.swtichBtn}>
           Need to {register ? "Register" : "Login"}?
         </button>
       </div>

@@ -17,3 +17,14 @@
     font-weight: 3000;
 }
 
+.option {
+    padding-right: 40px;
+    color: black;
+    font-size: 18px;
+}
+
+.links {
+    padding-top: 70px;
+    padding-right: 70px;
+}
+

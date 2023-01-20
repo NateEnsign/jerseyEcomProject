@@ -11,27 +11,27 @@ const Header = () => {
     <div>
       <header className={styles.header}>
         <h2 className={styles.logo}>Jersey Town</h2>
-        <ul>
-          <Link to="/">
-            <button>Home</button>
+        <div className={styles.links}>
+          <Link to="/" className={styles.option}>
+            Home
           </Link>
 
           {!authCtx.token && (
             
-              <Link to="/auth">login</Link>
+              <Link to="/auth" className={styles.option}>login</Link>
             
           )}
           {authCtx.token && (
            
-              <button className=".logout-btn " onClick={authCtx.logout}>
+              <Link to="/" className={styles.option} onClick={authCtx.logout}>
                 Logout
-              </button>
+              </Link>
             
           )}
           {authCtx.token && (
-          <Link to="/cart"><GrCart /></Link>
+          <Link to="/cart" className={styles.cartSymbol}><GrCart /></Link>
           )}
-        </ul>
+        </div>
       </header>
     </div>
   );
