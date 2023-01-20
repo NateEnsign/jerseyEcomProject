@@ -13,8 +13,17 @@
     width: 12%;
     aspect-ratio: 1/1;
     object-fit: cover;
+    margin-left: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .removeBtn {
-    height: 30px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.removeBtn:hover {
+    background-color: grey;
+    cursor: pointer;
 }
