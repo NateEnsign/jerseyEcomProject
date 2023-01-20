@@ -1,14 +1,17 @@
-import React from "react";
+import axios from 'axios';
+import React, {useContext} from "react";
+import AuthContext from "../store/authContext";
 import styles from "./CartItem.module.css";
-import axios from 'axios'
 
-const CartItem = ({ jersey, props }) => {
+const CartItem = ({ item, getCart }) => {
+  const { userId } = useContext(AuthContext);
 
-  const removeCartItemHandler = (cartItemId) => {
+  const removeCartItemHandler = () => {
+
     axios
-      .delete(`/cartItem/${cartItemId}`)
+      .delete(`/cartItem/${item?.id}`)
       .then(() => {
-        props.getCart()
+        getCart(userId)
       })
       .catch((err) => {
         console.error(err);
@@ -18,9 +21,9 @@ const CartItem = ({ jersey, props }) => {
   
   return (
     <div className={styles.itemCard}>
-      <img className={styles.jerseyPhoto} src={jersey.jersey.photo} alt="" />
-      <h3 className={styles.jerseyName}>{jersey.jersey.name}</h3>
-      <h4 className={styles.jerseyPrice}>${jersey.jersey.price}</h4>
+      <img className={styles.jerseyPhoto} src={item?.jersey?.photo} alt="" />
+      <h3 className={styles.jerseyName}>{item?.jersey?.name}</h3>
+      <h4 className={styles.jerseyPrice}>${item?.jersey?.price}</h4>
       <button onClick={removeCartItemHandler} className={styles.removeBtn}>Remove Item</button>
     </div>
   );

@@ -18,7 +18,7 @@ module.exports = {
       return res.sendStatus(200);
     } catch {
       console.log(err);
-      return res.sendStatus(400);
+      return res.sendStatus(400); 
     }
   },
 

@@ -41,7 +41,7 @@
 
 // export default CartScreen;
 
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useCallback } from "react";
 import styles from "./CartScreen.module.css";
 import axios from "axios";
 import AuthContext from "../store/authContext";
@@ -52,11 +52,11 @@ const CartScreen = () => {
   const [items, setItems] = useState([]);
   const [numCartItems, setNumCartItems] = useState("");
 
-  const getCart = () => {
+  const getCart = (id) => {
     axios
-      .get(`/cart/${userId}`)
+      .get(`/cart/${id}`)
       .then((res) => {
-        console.log(res.data);
+        console.log(res);
         setItems(res.data);
         setNumCartItems(res.data.length);
       })
@@ -77,11 +77,11 @@ const CartScreen = () => {
   };
 
   useEffect(() => {
-    getCart();
+    getCart(userId);
   }, []);
 
   const cartItemDisplay = items.map((cartItem, index) => {
-    return <CartItem jersey={cartItem} />;
+    return <CartItem item={cartItem} getCart={getCart} />;
   });
 
   return (
